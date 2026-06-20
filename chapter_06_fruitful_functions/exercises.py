@@ -3,14 +3,18 @@ Chapter 6: Exercises
 Working with recursion that returns values, and string manipulations.
 """
 
+
 def first(word: str) -> str:
     return word[0]
+
 
 def last(word: str) -> str:
     return word[-1]
 
+
 def middle(word: str) -> str:
     return word[1:-1]
+
 
 def is_palindrome(word: str) -> bool:
     """
@@ -22,6 +26,7 @@ def is_palindrome(word: str) -> bool:
     if first(word) != last(word):
         return False
     return is_palindrome(middle(word))
+
 
 def is_power(a: int, b: int) -> bool:
     """
@@ -38,12 +43,13 @@ def is_power(a: int, b: int) -> bool:
         return is_power(a // b, b)
     return False
 
+
 if __name__ == "__main__":
     print("--- Palindrome Checker ---")
     words = ["noon", "redivider", "python", ""]
     for w in words:
         print(f"'{w}': {is_palindrome(w)}")
-        
+
     print("\n--- Power Checker ---")
     print(f"Is 8 a power of 2? {is_power(8, 2)}")
     print(f"Is 10 a power of 2? {is_power(10, 2)}")

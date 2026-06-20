@@ -2,7 +2,9 @@
 Chapter 4: Mini Project - Generative Art Configurator
 Uses the principles of interface design to draw multiple shapes based on a config.
 """
+
 import turtle
+
 
 def draw_shape(t: turtle.Turtle, shape_type: str, size: int, color: str) -> None:
     """
@@ -11,7 +13,7 @@ def draw_shape(t: turtle.Turtle, shape_type: str, size: int, color: str) -> None
     """
     t.color(color)
     t.begin_fill()
-    
+
     if shape_type == "square":
         for _ in range(4):
             t.fd(size)
@@ -20,8 +22,9 @@ def draw_shape(t: turtle.Turtle, shape_type: str, size: int, color: str) -> None
         for _ in range(3):
             t.fd(size)
             t.lt(120)
-    
+
     t.end_fill()
+
 
 def render_scene(shapes_config: list[dict]) -> None:
     """
@@ -30,24 +33,25 @@ def render_scene(shapes_config: list[dict]) -> None:
     """
     screen = turtle.Screen()
     screen.bgcolor("black")
-    
+
     t = turtle.Turtle()
     t.speed(0)
     t.hideturtle()
-    
+
     for config in shapes_config:
         # Move to position
         t.penup()
         t.goto(config.get("x", 0), config.get("y", 0))
         t.pendown()
-        
+
         # Draw
         draw_shape(
-            t, 
-            config.get("type", "square"), 
-            config.get("size", 50), 
-            config.get("color", "white")
+            t,
+            config.get("type", "square"),
+            config.get("size", 50),
+            config.get("color", "white"),
         )
+
 
 if __name__ == "__main__":
     # Data-driven design
@@ -56,7 +60,7 @@ if __name__ == "__main__":
         {"type": "triangle", "size": 80, "color": "blue", "x": 100, "y": 50},
         {"type": "square", "size": 40, "color": "yellow", "x": -150, "y": 100},
     ]
-    
+
     print("Uncomment below lines to run the generative scene.")
     # render_scene(scene)
     # turtle.mainloop()
