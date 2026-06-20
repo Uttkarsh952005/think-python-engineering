@@ -37,3 +37,8 @@ This journal tracks my progress, technical hurdles, and engineering philosophy a
 - Transitioned to Object-Oriented Programming (OOP) by creating programmer-defined types (`Point`, `Rectangle`, `Time`).
 - Explored the difference between shallow and deep copying when dealing with nested mutable objects.
 - Differentiated between pure functions (which return new objects) and modifiers (which mutate existing objects in place).
+
+## Phase 8: Methods and Inheritance
+- Fully embraced OOP by moving functions inside classes as methods, utilizing `self` to manage instance state.
+- Learned Python's magic methods (`__init__`, `__str__`, `__add__`) to elegantly construct objects and overload operators.
+- Explored Inheritance and Composition, understanding how to model `IS-A` and `HAS-A` relationships to reuse code effectively.
