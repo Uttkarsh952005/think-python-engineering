@@ -17,3 +17,8 @@ This journal tracks my progress, technical hurdles, and engineering philosophy a
 - Mastered conditional logic to allow programs to make decisions.
 - Explored the concept of recursion—functions calling themselves—to solve naturally recursive problems.
 - Focused on fruitful functions, which return values, enabling deeper composition and incremental development.
+
+## Phase 4: Iteration and Strings
+- Transitioned from recursion to linear iteration using `while` and `for` loops.
+- Applied Newton's method to understand iterative approximations.
+- Explored strings as sequences, grasping the importance of immutability and slicing.
