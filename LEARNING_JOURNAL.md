@@ -48,6 +48,11 @@ This journal tracks my progress, technical hurdles, and engineering philosophy a
 - Tackled advanced inheritance patterns including Multiple Inheritance, Mixins, and Abstract Base Classes (ABCs) to enforce architectural contracts.
 - Concluded the foundational chapters, establishing a robust engineering mindset for future projects.
 
+## Phase 10: The Final Polish (Goodies, Debugging, Algorithms)
+- Mastered Pythonic idioms (comprehensions, generators, `collections`) to write cleaner, faster code.
+- Solidified debugging as a scientific process, utilizing `assert` and `logging` over `print`.
+- Learned Algorithm Analysis (Big O), understanding the profound performance differences between data structures like lists and sets.
+
 ---
 
 ## 🎯 Conclusion & Reflection
