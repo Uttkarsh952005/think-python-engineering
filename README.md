@@ -37,6 +37,7 @@ Inside every chapter directory, you will find exactly five files:
 - **[Chapters 7-12](./chapter_07_iteration):** State management, linear iteration, data structures (lists, dicts, tuples), and file I/O.
 - **[Chapters 13-18](./chapter_13_classes_objects):** Object-Oriented Programming, Magic Methods, Composition, Inheritance, and Architectural Design Patterns.
 - **[Chapters 19-21](./chapter_19_the_goodies):** Pythonic Idioms, Debugging Strategies, and Algorithm Analysis (Big O Notation).
+- **[Capstone & Standalone Projects](./mini_projects):** Contains `RecallCLI` (a fully decoupled terminal flashcard engine) and 7 standalone utility scripts demonstrating real-world scripting.
 
 ## 🚀 Running the Code Locally
 

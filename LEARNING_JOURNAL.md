@@ -56,6 +56,30 @@ This journal tracks my progress, technical hurdles, and engineering philosophy a
 ---
 
 ## 🎯 Conclusion & Reflection
-The journey through *Think Python* is now complete. By maintaining a strict, rigid repository structure, I ensured that the learning process didn't devolve into a messy scratchpad, but rather evolved into a clean, professional codebase. 
+Looking back, the progression from writing simple `print()` statements in Chapter 1 to architecting an abstract event loop in Chapter 19 highlights the enormous difference between "coding" and "engineering."
 
-I am now equipped not just with Python syntax, but with the mental models of a software engineer: identifying pure functions vs modifiers, understanding object memory vs references, and utilizing architecture to make code maintainable.
+This repository serves as my living portfolio of that transition. It proves not only that I can write Python, but that I can build scalable, tested, and strictly formatted systems. The journey doesn't end here, but the foundation is finally solid.
+
+---
+
+## 🛠️ Capstone Engineering Reflections (RecallCLI)
+*A brief log of the design decisions and tradeoffs made while building the capstone project.*
+
+### 1. Decoupling the UI
+At first, it was tempting to just use `print()` and `input()` right inside the `QuizEngine.run_quiz()` loop. It's faster to write. 
+**Tradeoff**: I chose to inject a `ui` object into the engine (`QuizEngine(deck, ui)`) instead. This means the core logic never imports UI libraries or calls `print()`. If I wanted to build a Flask or PyQt version of this later, the `core/` folder wouldn't need to change at all. It took a bit longer to wire up, but the separation of concerns feels much cleaner.
+
+### 2. Using Polymorphism for Card Types
+When I added Multiple Choice and True/False cards, the obvious beginner approach was:
+```python
+if card.type == "multiple_choice":
+    # print options
+```
+**Tradeoff**: I realized this would get messy fast if I kept adding card types. Instead, I moved the custom logic into `get_payload()` and `check_answer()` methods on the subclasses. The `QuizEngine` just trusts the card to know how to display itself. Building `Deck` and `Flashcard` finally made the "Composition vs Inheritance" debate click for me. A Deck *has* Flashcards, but a MultipleChoiceCard *is* a Flashcard.
+
+### 3. Explicit JSON Serialization
+I intentionally didn't use `pickle` (because it's unsafe) or a big framework like `pydantic`.
+**Tradeoff**: Writing manual dictionary mapping in `json_storage.py` is tedious. When I first built the JSON saving logic, all my `MultipleChoiceCard` objects came back as base `Flashcard` objects when I reloaded the app. I hadn't realized JSON doesn't remember Python classes! I had to manually serialize a `"type"` field so the loader knew which subclass to instantiate. Forcing myself to map the fields explicitly taught me exactly how ORMs work under the hood.
+
+### 4. The Emoji Crash (A Lesson in CLI Development)
+I tried to make the terminal look cool by adding Unicode emojis. It instantly broke on Windows PowerShell due to a `UnicodeEncodeError`. I had to go back and strip them out for safe ASCII/text formatting. A good lesson in cross-platform development!
