@@ -22,3 +22,8 @@ This journal tracks my progress, technical hurdles, and engineering philosophy a
 - Transitioned from recursion to linear iteration using `while` and `for` loops.
 - Applied Newton's method to understand iterative approximations.
 - Explored strings as sequences, grasping the importance of immutability and slicing.
+
+## Phase 5: Lists and Dictionaries
+- Encountered our first mutable data structure: Lists.
+- Learned the critical distinction between object identity and object equivalence, avoiding aliasing bugs.
+- Explored Dictionaries as key-value mappings, unlocking fast, hash-based lookups and frequency counting.
