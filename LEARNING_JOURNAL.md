@@ -27,3 +27,8 @@ This journal tracks my progress, technical hurdles, and engineering philosophy a
 - Encountered our first mutable data structure: Lists.
 - Learned the critical distinction between object identity and object equivalence, avoiding aliasing bugs.
 - Explored Dictionaries as key-value mappings, unlocking fast, hash-based lookups and frequency counting.
+
+## Phase 6: Tuples and Files
+- Mastered Tuples, completing the core data structure triad. Leveraged their immutability for dictionary keys and elegant multiple-assignment.
+- Transitioned from volatile memory to persistent storage by reading and writing files.
+- Learned exception handling (`try`/`except`) to robustly manage missing files and I/O errors.
